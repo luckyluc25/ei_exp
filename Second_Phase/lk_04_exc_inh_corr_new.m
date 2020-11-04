@@ -180,7 +180,7 @@ for index=2:size(x,2)-1
     clear dist res depvar_res_new bla
 end
 
-%Resiudalize GABA / glut concentrations for concentrations in all other voxels of interest
+%Residualize GABA / glut concentrations for concentrations in all other voxels of interest
 
 for ind=2:(size(x,2))-1
     
@@ -201,7 +201,7 @@ for ind=2:(size(x,2))-1
     
     %plot orthogonalized correlations
     figure;
-    scatter(gaba_res, depvar_gaba_res_new, 250,'markerfacecolor',[ 0 0 102/256], 'markeredgecolor','k') %; ylim([-1.7 -0.4]); xlim([-0.082 0.105])
+    scatter(gaba_res, depvar_gaba_res_new, 250,'markerfacecolor',[ 0 0 102/256], 'markeredgecolor','k') 
     set(gca,'tickdir', 'out', 'fontname', 'arial')
     xlabel(['Residual GABA ',labels_MRS{ind-1}], 'fontsize', 85, 'fontname', 'arial')
     ylabel('Residual Effect of DV', 'fontsize',85, 'fontname', 'arial');
@@ -228,7 +228,7 @@ for ind=2:(size(x,2))-1
     
     % do the same for glutamate
     figure;
-    scatter(glut_res, depvar_glut_res_new, 250,'markerfacecolor',[ 0 0 102/256], 'markeredgecolor','k')%; ylim([-2.4 -0.9]); xlim([-0.2 0.25])
+    scatter(glut_res, depvar_glut_res_new, 250,'markerfacecolor',[ 0 0 102/256], 'markeredgecolor','k')
     set(gca,'tickdir', 'out', 'xticklabel', [], 'yticklabel', []);
     xlabel(['Residual Glutamate ',labels_MRS{ind-1}], 'fontsize', 85, 'fontname', 'arial')
     ylabel('Residual Effect of DV', 'fontsize', 95, 'fontname', 'arial')
