@@ -4,8 +4,6 @@ function [fitparams,betas, modelfit] = main_model_EV(data,model,dat_class,num_it
 lb =    [0 0 0 0 0 0];     % lower bound constraint
 ub =    [60 60 60 60 60];   % upper bound constraint
 
-%model={'multi','adi','hybrid','aditau','hybridtau'};
-
 
 for start=1:num_it
     
