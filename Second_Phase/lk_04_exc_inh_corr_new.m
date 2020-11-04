@@ -24,7 +24,7 @@ table=importdata( 'C:\Users\lucak\Desktop\clash_share-main\ressources_share\tabl
 %rename combines MR names with subject numbers
 rename=importdata( 'C:\Users\lucak\Desktop\clash_share-main\ressources_share\rename_anonym.mat');
 
-%in gm_spm12_test grey matter ceoncentrations are stored by summing across %P(GM). They are later divided by total number of voxels in mask to
+%in gm_spm12_test grey matter concentrations are stored by summing across %P(GM). They are later divided by total number of voxels in mask to
 %approximate relative GM concentrations.
 gm_spm12_gmwm=importdata('C:\Users\lucak\Desktop\clash_share-main\ressources_share\gm_spm12_gmwm_anonym.mat') ;
 
