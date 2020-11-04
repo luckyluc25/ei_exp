@@ -93,8 +93,7 @@ for iteration=1:numel(vp)
     
 end
 
-%save( 'C:\Users\lucak\Desktop\clash_revision\First_Phase\DV\linReg_1stphase_check','linReg_1stphase_check')
-%save( 'C:\Users\lucak\Desktop\clash_revision\First_Phase\DV\rt_1st','rt_1st')
+
 
 %% test coefficients and plot!
 
