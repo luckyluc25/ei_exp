@@ -89,7 +89,7 @@ for iteration=1:numel(vp)
     all_wins=all_wins(:,2:end);
     
     % we take the current patch value here since they are already known by
-    % the subject during patch leaving decisions!
+    % the subject during value-guided decisions!
     for k=1:ntrl
         if data(k,6)==1
             
