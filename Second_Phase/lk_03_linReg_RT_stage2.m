@@ -91,7 +91,7 @@ for iteration=1:numel(vp)
     repchoices=repchoices(:,2:end);
     
     
-    all_wins=double((data(:,16)==1 & data(:,13)==2) | (data(:,15) & data(:,13)==1));
+    all_wins=double((data(:,16)==1 & data(:,13)==2) | (data(:,15)==1 & data(:,13)==1));
     all_wins=toeplitz(all_wins,zeros(1,index+1));
     all_wins=all_wins(:,2:end);
     
@@ -153,6 +153,5 @@ set(gca,'YTick',[L(1):0.3:L(2)]);
 x=0:20;
 
 check=mes(c_feb,0,'U3_1');
-
 
 
