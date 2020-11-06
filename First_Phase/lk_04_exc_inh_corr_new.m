@@ -1,4 +1,4 @@
-%% Regress GABA/Gluatamte concentration on DV
+%% Regress GABA/Glutamate concentration on DV
 
 %clean up
 clear; close all; clc
@@ -72,7 +72,7 @@ for concen=1:numel(labels_MRS)
         
         %Normalise by GM within each voxel
         
-        %spm12 idx is the index of the subject; concentrations are stored in the same order as they are read out here
+        %spm12 idx is the index of the subject; 
         glut_raw=table.data.Alles(idx,14);
         glut_raw=glut_raw/(gm_spm12_gmwm.gm_all(spm12_idx,concen_con)./gm_spm12_gmwm.allvox(spm12_idx,concen_con));
         gaba_raw=table.data.Alles(idx,10);
