@@ -7,7 +7,7 @@ clear; close all; clc
 %add the paths you need
 
 %load dependent variables
-cd( 'C:\Users\lucak\Desktop\clash_share-main\Second_Phase\DV');
+cd( 'C:\Users\lucak\Desktop\ei_exp-main\Second_Phase\DV');
 
 files=dir('*.mat')
 for k=1:numel(files)
@@ -19,14 +19,14 @@ end
 vp = {'1'; '2'; '3'; '4'; '5'; '7'; '9'; '10'; '12';  '14'; '15'; '16'; '17'; '18';  '20';  '22'; '23'; '24';  '26'; '27'; '28'; '29'; '30'; '31'; '32'; '33'; '34'; '35'; '38'};
 
 % E/I balances are read out from csv files to a table and stored under % their MR name
-table=importdata( 'C:\Users\lucak\Desktop\clash_share-main\ressources_share\table_anonym.mat');
+table=importdata( 'C:\Users\lucak\Desktop\ei_exp-main\ressources_share\table_anonym.mat');
 
 %rename combines MR names with subject numbers
-rename=importdata( 'C:\Users\lucak\Desktop\clash_share-main\ressources_share\rename_anonym.mat');
+rename=importdata( 'C:\Users\lucak\Desktop\ei_exp-main\ressources_share\rename_anonym.mat');
 
 %in gm_spm12_test grey matter concentrations are stored by summing across %P(GM). They are later divided by total number of voxels in mask to
 %approximate relative GM concentrations.
-gm_spm12_gmwm=importdata('C:\Users\lucak\Desktop\clash_share-main\ressources_share\gm_spm12_gmwm_anonym.mat') ;
+gm_spm12_gmwm=importdata('C:\Users\lucak\Desktop\ei_exp-main\ressources_share\gm_spm12_gmwm_anonym.mat') ;
 
 %just a check-if one variable is not there that should be, the code will
 %break!
@@ -105,7 +105,7 @@ x_single=[gaba_corr glut_corr];
 model=importdata('C:\Users\lucak\Desktop\clash_final\Second_Phase\Modelling_lokal\extended_fitting\EVhybridlu.mat');
 model_ddm=importdata( 'C:\Users\lucak\Desktop\clash_final\Second_Phase\DV\objective_allregs_vanda_short.mat');
 
-depvar=model.params(:,5);
+depvar=objcorP;
 
 %============================================================================================================%
 x = [ones(size(x,1),1) normalise([x sum_nb_obj ])];
@@ -149,11 +149,11 @@ for index=2:size(x,2)-1
     ax.XColor = 'k';
     ax.YColor = 'k';
     set(gca,'linewidth',2)
-    set(gca,'xlim',[-1.9 2.9]);
+    set(gca,'xlim',[-2.9 2.9]);
     
     
     h = lsline;set(h,'color','k','linewidth',3);
-    set(gca,'xlim',[-2 3]);
+    set(gca,'xlim',[-3 3]);
     set(gca,'ylim',[-3 3]);
     L = get(gca,'XLim');
     set(gca,'XTick',[L(1):1:L(2)]);
