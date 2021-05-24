@@ -32,7 +32,7 @@ gm_spm12_gmwm=importdata('C:\Users\lucak\Desktop\ei_exp-main\ressources_share\gm
 %break!
 gm_spm12_gmwm.gm_all(gm_spm12_gmwm.gm_all==0)=NaN;
 gm_spm12_gmwm.wm_all(gm_spm12_gmwm.wm_all==0)=NaN;
-gm_spm12_gmwm.allvox(gm_spm12_gmwm.wm_all==0)=NaN;
+gm_spm12_gmwm.allvox(gm_spm12_gmwm.allvox==0)=NaN;
 
 %read in the following concentrations
 labels_MRS={'LPFC','M1li','M1re','pgACC','aMCC'};
