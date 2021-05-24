@@ -4,7 +4,7 @@
 clear; close all; clc
 
 %load dependent variables
-cd( 'C:\Users\lucak\Desktop\clash_share-main\First_Phase\DV');
+cd( 'C:\Users\lucak\Desktop\ei_exp-main\First_Phase\DV');
 
 files=dir('*.mat')
 for k=1:numel(files)
@@ -16,19 +16,19 @@ end
 vp = {'1'; '2'; '3'; '4'; '5'; '7'; '9'; '10'; '12';  '14'; '15'; '16'; '17'; '18';  '20';  '22'; '23'; '24';  '26'; '27'; '28'; '29'; '30'; '31'; '32'; '33'; '34'; '35'; '38'};
 
 % E/I balances are read out from csv files to a table and stored under their MR name (here in anonymised form)
-table=importdata(  'C:\Users\lucak\Desktop\clash_share-main\ressources_share\table_anonym.mat');
+table=importdata(  'C:\Users\lucak\Desktop\ei_exp-main\ressources_share\table_anonym.mat');
 
 %rename combines MR names with subject numbers
-rename=importdata( 'C:\Users\lucak\Desktop\clash_share-main\ressources_share\rename_anonym.mat');
+rename=importdata( 'C:\Users\lucak\Desktop\ei_exp-main\ressources_share\rename_anonym.mat');
 
 %in gm_spm12_test grey matter ceoncentrations are stored by summing across %P(GM). They are later divided by total number of voxels in mask to
 %approximate relative GM concentrations.
-gm_spm12_gmwm=importdata('C:\Users\lucak\Desktop\clash_share-main\ressources_share\gm_spm12_gmwm_anonym.mat') ;
+gm_spm12_gmwm=importdata('C:\Users\lucak\Desktop\ei_exp-main\ressources_share\gm_spm12_gmwm_anonym.mat') ;
 
 %just a check-if one variable is not there that should be, the code will break!
 gm_spm12_gmwm.gm_all(gm_spm12_gmwm.gm_all==0)=NaN;
 gm_spm12_gmwm.wm_all(gm_spm12_gmwm.wm_all==0)=NaN;
-gm_spm12_gmwm.allvox(gm_spm12_gmwm.wm_all==0)=NaN;
+gm_spm12_gmwm.allvox(gm_spm12_gmwm.allvox==0)=NaN;
 
 %read in the following concentrations
 labels_MRS={'LPFC','M1li','M1re','pgACC','aMCC'};
@@ -99,8 +99,8 @@ end
 %estimate ratios
 x=[(glut_corr./gaba_corr)];
 x_single=[gaba_corr glut_corr];
-model=importdata('C:\Users\lucak\Desktop\clash_share-main\First_Phase\DV\standard_ddm_var_bias_nosv.mat');
-depvar=model.a_single;
+%model=importdata('C:\Users\lucak\Desktop\clash_share-main\First_Phase\DV\standard_ddm_var_bias_nosv.mat');
+depvar=switch_index;
 
 %============================================================================================================%
 x = [ones(size(x,1),1) normalise(x)];
