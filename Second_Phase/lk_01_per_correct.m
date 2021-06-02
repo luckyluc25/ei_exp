@@ -56,7 +56,7 @@ for iteration=1:numel(vp)
     objcorP(iteration,:) = 100*objcorr/sum(all); %get the percentage of ev-better choices!
     
     
-    clear  smaxall_grid smax_red_grid smax_red_pso smaxev_grid ev_red maxevobjcorr subcorr_pso subcorr_grid
+    clear  ev_red all maxev
     
 end
 
