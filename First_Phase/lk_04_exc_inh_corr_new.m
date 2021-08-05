@@ -21,8 +21,7 @@ table=importdata(  'C:\Users\lucak\Desktop\ei_exp-main\ressources_share\table_an
 %rename combines MR names with subject numbers
 rename=importdata( 'C:\Users\lucak\Desktop\ei_exp-main\ressources_share\rename_anonym.mat');
 
-%in gm_spm12_test grey matter ceoncentrations are stored by summing across %P(GM). They are later divided by total number of voxels in mask to
-%approximate relative GM concentrations.
+
 gm_spm12_gmwm=importdata('C:\Users\lucak\Desktop\ei_exp-main\ressources_share\gm_spm12_gmwm_anonym.mat') ;
 
 %just a check-if one variable is not there that should be, the code will break!
